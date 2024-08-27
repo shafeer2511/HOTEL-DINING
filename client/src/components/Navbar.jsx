@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/navbar.css';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Import the arrow icon
 
 function Navbar() {
   const [dropdown, setDropdown] = useState(false);
@@ -18,11 +19,16 @@ function Navbar() {
         </Link>
         <ul className="navbar-menu">
           <li className="navbar-profile">
-            <PermIdentityIcon
-              className="navbar-profile-icon"
-              onClick={handleDropdownToggle}
-              style={{ cursor: 'pointer' }}
-            />
+            <div className="profile-container" onClick={handleDropdownToggle}>
+              <PermIdentityIcon
+                className="navbar-profile-icon"
+                style={{ cursor: 'pointer' }}
+              />
+              <ExpandMoreIcon
+                className="navbar-expand-icon"
+                style={{ cursor: 'pointer', marginLeft: '4px' }} // Adjust spacing
+              />
+            </div>
             {dropdown && (
               <ul className="navbar-dropdown">
                 <li className="navbar-dropdown-item">
@@ -44,10 +50,8 @@ function Navbar() {
             )}
           </li>
         </ul>
-        
       </div>
     </nav>
-    
   );
 }
 
