@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    height: 100vh; 
+    width: 100vw;  
+    overflow: hidden; 
+  }
+  
+  .reg-log{
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    font-size: 80%;
+  }
+  .now{
+    margin-top: 6%;
+    margin-left: 10px;
+  }
+  
+  
+  .loginbox {
+    width: 320px;
+    height: auto; 
+    background: white;
+    color: black;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 7%;
+    box-shadow: 0px 0px 5px -3px;
+    backdrop-filter: blur(0.7);
+  }
+  
+  .loginbox:hover {
+    box-shadow: 0px 0px 10px;
+    transition: 0.5s;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+  }
+  
+  .loginbox p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+  
+  .loginbox input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .loginbox input[type="text"],
+  .loginbox input[type="password"] {
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-bottom: 1px solid #353434;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+  }
+  
+  .loginbox input[type="submit"] {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(55, 167, 55);
+    color: #353434;
+    font-size: 18px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px rgb(0, 0, 0);
+    cursor: pointer;
+  }
+  
+  .loginbox input[type="submit"]:hover {
+    background-color: rgb(49, 123, 49);
+    color: aliceblue;
+    transition: 0.5s;
+  }
+  
+  .loginbox input[type="submit"]:active {
+    background-color: white;
+    color: rgb(49, 123, 49);
+    transition: 0.3s;
+    border-color: rgb(49, 123, 49);
+    box-shadow: 0px 0px 3px rgb(49, 123, 49);
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  
