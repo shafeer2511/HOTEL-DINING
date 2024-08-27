@@ -38,14 +38,16 @@ function Navbar() {
                   <Link to="/login" className="navbar-dropdown-link">Login</Link>
                 </li>
                 <li className="navbar-dropdown-item">
-                  <Link to="/signup" className="navbar-dropdown-link">Sign Up</Link>
+                  <Link to="/register" className="navbar-dropdown-link">Sign Up</Link>
                 </li>
               </ul>
             )}
           </li>
         </ul>
+        
       </div>
     </nav>
+    
   );
 }
 
