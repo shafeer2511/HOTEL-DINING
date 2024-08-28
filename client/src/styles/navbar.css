@@ -25,6 +25,7 @@ body {
   color: #fff;
   font-size: 24px;
   text-decoration: none;
+ 
 }
 
 /* Menu items */
@@ -56,11 +57,10 @@ body {
 /* Dropdown menu */
 .navbar-dropdown {
   position: absolute;
-  top: 40px;
+  top: 50px;
   right: 0;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   list-style: none;
   padding: 10px;
@@ -77,7 +77,7 @@ body {
 /* Dropdown links */
 .navbar-dropdown-link {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   font-size: 16px;
   padding: 10px;
   display: block;
@@ -92,9 +92,9 @@ body {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 35%;
   height: 2px;
-  background-color: #007bff;
+  background-color: #000000;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
 }
@@ -106,6 +106,6 @@ body {
 
 /* Optionally, change link color on hover */
 .navbar-dropdown-link:hover {
-  background-color: #f0f0f0;
-  color: #007bff;
+  
+  color: #ffffff;
 }
