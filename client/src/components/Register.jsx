@@ -4,7 +4,7 @@ import '../styles/Register.css';
 
 const RegisterPage = () => {
   const [name, setName] = useState('');
-  const [age, setAge] = useState('');
+  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
@@ -18,12 +18,12 @@ const RegisterPage = () => {
       errors.name = 'Name is required';
     }
 
-    if (!age) {
+    if (!phone) {
       valid = false;
-      errors.age = 'Age is required';
-    } else if (isNaN(age) || age <= 0) {
+      errors.phone = 'Phone number is required';
+    } else if (!/^\d{10}$/.test(phone)) {
       valid = false;
-      errors.age = 'Age must be a positive number';
+      errors.phone = 'Phone number must be exactly 10 digits';
     }
 
     if (!email) {
@@ -49,7 +49,7 @@ const RegisterPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log('Registration submitted:', { name, age, email, password });
+      console.log('Registration submitted:', { name, phone, email, password });
     }
   };
 
@@ -66,13 +66,13 @@ const RegisterPage = () => {
           placeholder="Enter Name"
         />
 
-        {errors.age && <p className="error">{errors.age}</p>}
-        <p>Age</p>
+        {errors.phone && <p className="error">{errors.phone}</p>}
+        <p>Phone Number</p>
         <input
-          type="number"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-          placeholder="Enter Age"
+          type="text"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          placeholder="Enter Phone Number"
         />
 
         {errors.email && <p className="error">{errors.email}</p>}
@@ -95,8 +95,8 @@ const RegisterPage = () => {
 
         <input type="submit" value="Register" />
         <div className="reg-log">
-          <h4>If you already register</h4>
-          <Link to="/login" className='now'>login here</Link>
+          <h4>If you already registered</h4>
+          <Link to="/login" className='now'>Login here</Link>
         </div>
       </form>
     </div>

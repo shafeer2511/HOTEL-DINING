@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Login.css';
 
+
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -37,7 +38,8 @@ const LoginPage = () => {
 
   return (
     <div className="loginbox">
-      <img src="logo.gif" className="avatar" alt="Avatar" />
+      <img src='logo.gif' className="avatar" alt="Avatar" />
+
       <h1>Login Here</h1>
       <form onSubmit={handleSubmit}>
         <p>Email</p>
