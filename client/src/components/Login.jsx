@@ -9,7 +9,7 @@ const LoginPage = () => {
 
   const validate = () => {
     let valid = true;
-
+    
     if (!email) {
       valid = false;
       alert('Email is required');
