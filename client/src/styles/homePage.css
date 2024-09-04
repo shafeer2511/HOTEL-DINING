@@ -1,0 +1,13 @@
+.home-page {
+    min-height: 100vh;
+    padding-top: 80px; /* Adjust based on the height of your navbar */
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    justify-content: space-around; /* Center the cards horizontally */
+    align-items: flex-start; /* Align cards to the top */
+    gap: 20px; /* Space between the cards */
+    background-size: cover;
+    background-position: center;
+    
+  }
+  
