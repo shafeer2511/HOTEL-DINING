@@ -26,7 +26,7 @@ function Navbar() {
               />
               <ExpandMoreIcon
                 className="navbar-expand-icon"
-                style={{ cursor: 'pointer', marginLeft: '4px' }} // Adjust spacing
+                style={{ cursor: 'pointer', marginLeft: '30px' }} // Adjust spacing
               />
             </div>
             {dropdown && (
