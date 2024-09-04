@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap'); 
+
 /* Navbar container */
 .navbar {
-  background-color: #333;
+  background-color: #BAB9B6;
   padding: 10px 20px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  
 }
 
 /* Adjust page content to not go under the navbar */
@@ -23,10 +26,14 @@ body {
 /* Logo */
 .navbar-logo {
   color: #fff;
-  font-size: 44px;
+  font-size: 24px;
   text-decoration: none;
- 
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
+
 
 /* Menu items */
 .navbar-menu {

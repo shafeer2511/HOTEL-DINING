@@ -4,6 +4,8 @@ import '../styles/navbar.css';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Import the arrow icon
 
+
+
 function Navbar() {
   const [dropdown, setDropdown] = useState(false);
 
@@ -15,7 +17,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          HotelDining
+          FREENCY DiNE-iN
         </Link>
         <ul className="navbar-menu">
           <li className="navbar-profile">
