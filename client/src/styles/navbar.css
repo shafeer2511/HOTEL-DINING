@@ -1,13 +1,14 @@
 /* Navbar container */
 .navbar {
   background-color: #333;
-  padding: 10px 20px;
+  padding: 5px 20px;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1000; /* Ensure this is high enough */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Adjust page content to not go under the navbar */
 body {
@@ -57,11 +58,8 @@ body {
 /* Dropdown menu */
 .navbar-dropdown {
   position: absolute;
-<<<<<<< Updated upstream
-  top: 75.5px;
-=======
-  top: 76px;
->>>>>>> Stashed changes
+
+  /* top: 76px; */
   right: 0;
   background-color: #333;
   color: #fff;
