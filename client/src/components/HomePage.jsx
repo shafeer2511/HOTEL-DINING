@@ -5,7 +5,7 @@ import '../styles/homePage.css';
 function HomePage() {
   const hotels = [
     {
-        name: 'Luxury Stay',
+        name: 'Outdoor Cafe',
         rating: 4.5,
         image:  '../assests/hotel3.jpg',
         location: 'New York, NY',
@@ -14,7 +14,7 @@ function HomePage() {
     },
 
     {
-      name: 'Luxury Stay',
+      name: 'Hotel Patliputra Nirvana',
       rating: 4.5,
       image: '../assests/hotel4.jpg',
       location: 'New York, NY',
@@ -23,7 +23,7 @@ function HomePage() {
     },
 
     {
-      name: 'Luxury Stay',
+      name: 'J.Hind',
       rating: 4.5,
       image: '../assests/hotel5.jpg',
       location: 'New York, NY',
@@ -32,7 +32,7 @@ function HomePage() {
     },
 
     {
-      name: 'Luxury Stay',
+      name: 'Raddison Blu',
       rating: 4.5,
       image: '../assests/hotel6.jpg',
       location: 'New York, NY',
@@ -41,7 +41,7 @@ function HomePage() {
     },
 
     {
-      name: 'Cozy Inn',
+      name: 'The Raintree ',
       rating: 4.0,
       image: '../assests/hotel7.jpg',
       location: 'San Francisco, CA',
@@ -50,7 +50,7 @@ function HomePage() {
     },
 
     {
-      name: 'Cozy Inn',
+      name: 'Kipling Cafe',
       rating: 4.0,
       image: '../assests/hotel8.jpg',
       location: 'San Francisco, CA',
