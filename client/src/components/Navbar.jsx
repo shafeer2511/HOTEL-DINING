@@ -1,23 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Import the arrow icon
-
-
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function Navbar() {
   const [dropdown, setDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
+  // Toggle dropdown visibility
   const handleDropdownToggle = () => {
-    setDropdown(!dropdown);
+    setDropdown(prev => !prev);
   };
+
+  // Handle clicks outside of the dropdown
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setDropdown(false);
+    }
+  };
+
+  useEffect(() => {
+    // Add event listener
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      // Cleanup event listener
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          FREENCY DiNE-iN
+          HotelDining
         </Link>
         <ul className="navbar-menu">
           <li className="navbar-profile">
@@ -28,11 +44,11 @@ function Navbar() {
               />
               <ExpandMoreIcon
                 className="navbar-expand-icon"
-                style={{ cursor: 'pointer', marginLeft: '30px' }} // Adjust spacing
+                style={{ cursor: 'pointer', marginLeft: '18px' }}
               />
             </div>
             {dropdown && (
-              <ul className="navbar-dropdown">
+              <ul className="navbar-dropdown" ref={dropdownRef}>
                 <li className="navbar-dropdown-item">
                   <Link to="/" className="navbar-dropdown-link">Home</Link>
                 </li>

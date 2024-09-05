@@ -7,7 +7,7 @@ function HomePage() {
     {
         name: 'Luxury Stay',
         rating: 4.5,
-        image:  '/public/assets/hotel1.jpg',
+        image:  '../assests/hotel3.jpg',
         location: 'New York, NY',
         foodsServed: ['Continental', 'Italian', 'Indian'],
         timings: '24/7',
@@ -16,7 +16,7 @@ function HomePage() {
     {
       name: 'Luxury Stay',
       rating: 4.5,
-      image: '../public/assests/hotel3.jpg',
+      image: '../assests/hotel3.jpg',
       location: 'New York, NY',
       foodsServed: ['Continental', 'Italian', 'Indian'],
       timings: '24/7',
@@ -25,7 +25,7 @@ function HomePage() {
     {
       name: 'Luxury Stay',
       rating: 4.5,
-      image: '../public/assests/hotel3.jpg',
+      image: '../assests/hotel3.jpg',
       location: 'New York, NY',
       foodsServed: ['Continental', 'Italian', 'Indian'],
       timings: '24/7',
@@ -34,7 +34,7 @@ function HomePage() {
     {
       name: 'Luxury Stay',
       rating: 4.5,
-      image: '../public/assests/hotel3.jpg',
+      image: '../assests/hotel3.jpg',
       location: 'New York, NY',
       foodsServed: ['Continental', 'Italian', 'Indian'],
       timings: '24/7',
@@ -43,7 +43,7 @@ function HomePage() {
     {
       name: 'Cozy Inn',
       rating: 4.0,
-      image: '../public/assests/hotel3.jpg',
+      image: '../assests/hotel3.jpg',
       location: 'San Francisco, CA',
       foodsServed: ['Chinese', 'Mexican'],
       timings: '6:00 AM - 11:00 PM',
@@ -52,7 +52,7 @@ function HomePage() {
     {
       name: 'Cozy Inn',
       rating: 4.0,
-      image: '../public/assests/hotel3.jpg',
+      image: '../assests/hotel3.jpg',
       location: 'San Francisco, CA',
       foodsServed: ['Chinese', 'Mexican'],
       timings: '6:00 AM - 11:00 PM',
@@ -64,10 +64,12 @@ function HomePage() {
 
   return (
     <div className="home-page">
+      {/* <div className="hotel-grid"> */}
       {hotels.map((hotel, index) => (
         <HotelCards key={index} hotel={hotel} />
       ))}
     </div>
+      // </div>
   );
 }
 
