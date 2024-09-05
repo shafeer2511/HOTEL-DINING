@@ -10,4 +10,7 @@
     background-position: center;
     overflow: scroll;
   }
-  
+  body {
+    overflow-y: auto;
+    height: 100%;
+  }
