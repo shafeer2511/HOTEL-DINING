@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Navbar.css';
+import '../styles/navbar.css';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
