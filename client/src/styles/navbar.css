@@ -64,14 +64,11 @@ body {
 /* Dropdown menu */
 .navbar-dropdown {
   position: absolute;
-<<<<<<< Updated upstream
   top: 80px; /* Adjusted to move it slightly down */
   right: 50px; /* Adjusted to move it slightly left */
-=======
   top: 75.5px;
   top: 76px;
   right: 0;
->>>>>>> Stashed changes
   background-color: #000000;
   color: #fff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
