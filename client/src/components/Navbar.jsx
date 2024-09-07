@@ -65,7 +65,7 @@ function Navbar() {
                 </li>
                 <li className="navbar-dropdown-item">
                   <Link
-                    to="/dining"
+                    to="/Book Table"
                     className="navbar-dropdown-link"
                     onClick={handleLinkClick}
                   >
