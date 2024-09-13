@@ -10,6 +10,7 @@ function HotelCards({ hotel, index }) {
   };
 
   return (
+    
     <div className="hotel-card" onClick={handleClick} style={{ cursor: 'pointer' }}>
       <img src={hotel.image} alt={hotel.name} className="hotel-card-image" />
       <div className="hotel-card-content">
@@ -20,6 +21,7 @@ function HotelCards({ hotel, index }) {
         <p className="hotel-card-timings">Timings: {hotel.timings}</p>
       </div>
     </div>
+  
   );
 }
 

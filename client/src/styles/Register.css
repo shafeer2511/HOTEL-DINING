@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../images/dine.jpg"); 
-  background-color: black;
+  
+  background-color: rgb(255, 255, 255);
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* This ensures the background stays fixed while scrolling */

@@ -78,7 +78,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 200px;
-  border-radius: 8px; /* Optional: Add some rounding to the edges */
+/* Optional: Add some rounding to the edges */
 }
 
 /* Dropdown items */

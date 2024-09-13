@@ -8,6 +8,7 @@ import BookTable from './components/RestaurantGrid';
 import HotelDetails from './components/HotelDetails';
 import React, { useState } from 'react';
 import BookingPage from './components/BookingPage';
+import HotelCards from './components/HotelCards';
 // Define the hotels array here or import if it's in a separate file
 const hotels = [
   {
@@ -70,6 +71,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/hotel-cards" element={<HotelCards/>}/>
         <Route path="/Book Table" element={<BookTable />} />
         <Route path="/hotels/:id" element={<HotelDetails hotels={hotels} isLoggedIn={isLoggedIn} />} />
         <Route path="/book/:id" element={<BookingPage />} /> {/* Booking page route */}
