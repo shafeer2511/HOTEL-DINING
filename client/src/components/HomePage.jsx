@@ -66,7 +66,7 @@ function HomePage() {
     <div className="home-page">
       {/* <div className="hotel-grid"> */}
       {hotels.map((hotel, index) => (
-        <HotelCards key={index} hotel={hotel} />
+        <HotelCards key={index} hotel={hotel} index={index}/>
       ))}
     </div>
       // </div>

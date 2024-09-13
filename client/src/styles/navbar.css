@@ -68,12 +68,13 @@ body {
   right: 50px; /* Adjusted to move it slightly left */
   top: 75.5px;
   top: 76px;
-  right: 0;
-  background-color: #000000;
+  right: 40px;
+  background-color: #333;
   color: #fff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   list-style: none;
   padding: 15px;
+  
   display: flex;
   flex-direction: column;
   width: 200px;

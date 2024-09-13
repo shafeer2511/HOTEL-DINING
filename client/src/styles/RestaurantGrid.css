@@ -1,4 +1,4 @@
-.side-recommendation-bar {
+.restaurant-grid-sidebar {
   width: 250px; /* Increase the width for more room */
   padding: 20px;
   margin-top: 5%;
@@ -7,25 +7,25 @@
   border-radius: 8px; /* Rounded corners for a modern look */
 }
 
-.filter-section {
+.restaurant-grid-filter-section {
   margin-bottom: 25px; /* Increased space between filter sections */
   padding-bottom: 15px; /* Add padding at the bottom of each filter section */
   border-bottom: 1px solid #ddd; /* Add a border to separate sections */
 }
 
-h2, h3 {
+.restaurant-grid-title, .restaurant-grid-subtitle {
   margin: 0 0 15px 0; /* Add space below headers */
   font-size: 1.1em; /* Adjust font size */
   font-weight: bold; /* Make headers bold */
 }
 
-ul {
+.restaurant-grid-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-li {
+.restaurant-grid-list-item {
   margin: 10px 0; /* Add more space between list items */
   padding: 8px 10px; /* Add padding around the text */
   background-color: #fff; /* White background for list items */
@@ -35,11 +35,11 @@ li {
   transition: background-color 0.3s ease; /* Smooth hover transition */
 }
 
-li:hover {
+.restaurant-grid-list-item:hover {
   background-color: #f0f0f0; /* Slight color change on hover */
 }
 
-li:last-child {
+.restaurant-grid-show-more {
   color: #007bff; /* Blue color for the 'Show More' link */
   font-weight: bold;
   cursor: pointer;

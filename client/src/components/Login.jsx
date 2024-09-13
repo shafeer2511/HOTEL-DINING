@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Login.css';
 
-
-const LoginPage = () => {
+const LoginPage = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const validate = () => {
     let valid = true;
@@ -33,6 +33,8 @@ const LoginPage = () => {
     e.preventDefault();
     if (validate()) {
       console.log('Form submitted');
+      setIsLoggedIn(true);  // Set the user as logged in
+      navigate('/');  // Redirect to the homepage after login
     }
   };
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/RestaurantGrid.css'; 
 
 function RestaurantGrid() {
@@ -18,22 +18,22 @@ function RestaurantGrid() {
   ];
 
   return (
-    <div className="side-recommendation-bar">
-      <h2>Quick Filters</h2>
-      <div className="filter-section">
-        <h3>Cuisines</h3>
-        <ul>
+    <div className="restaurant-grid-sidebar">
+      <h2 className="restaurant-grid-title">Quick Filters</h2>
+      <div className="restaurant-grid-filter-section">
+        <h3 className="restaurant-grid-subtitle">Cuisines</h3>
+        <ul className="restaurant-grid-list">
           {cuisines.map((cuisine) => (
-            <li key={cuisine}>{cuisine}</li>
+            <li key={cuisine} className="restaurant-grid-list-item">{cuisine}</li>
           ))}
-          <li>Show More (61)</li>
+          <li className="restaurant-grid-show-more">Show More (61)</li>
         </ul>
       </div>
-      <div className="filter-section">
-        <h3>Tags</h3>
-        <ul>
+      <div className="restaurant-grid-filter-section">
+        <h3 className="restaurant-grid-subtitle">Tags</h3>
+        <ul className="restaurant-grid-list">
           {tags.map((tag) => (
-            <li key={tag}>{tag}</li>
+            <li key={tag} className="restaurant-grid-list-item">{tag}</li>
           ))}
         </ul>
       </div>
