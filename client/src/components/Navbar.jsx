@@ -43,50 +43,28 @@ function Navbar() {
         <ul className="navbar-menu">
           <li className="navbar-profile">
             <div className="profile-container" onClick={handleDropdownToggle}>
-              <PermIdentityIcon
-                className="navbar-profile-icon"
-                style={{ cursor: 'pointer' }}
-              />
-              <ExpandMoreIcon
-                className="navbar-expand-icon"
-                style={{ cursor: 'pointer', marginLeft: '18px' }}
-              />
+              <PermIdentityIcon className="navbar-profile-icon" />
+              <ExpandMoreIcon className="navbar-expand-icon" />
             </div>
             {dropdown && (
               <ul className="navbar-dropdown" ref={dropdownRef}>
                 <li className="navbar-dropdown-item">
-                  <Link
-                    to="/"
-                    className="navbar-dropdown-link"
-                    onClick={handleLinkClick}
-                  >
+                  <Link to="/" className="navbar-dropdown-link" onClick={handleLinkClick}>
                     Home
                   </Link>
                 </li>
                 <li className="navbar-dropdown-item">
-                  <Link
-                    to="/Book Table"
-                    className="navbar-dropdown-link"
-                    onClick={handleLinkClick}
-                  >
+                  <Link to="/Book Table" className="navbar-dropdown-link" onClick={handleLinkClick}>
                     Dining
                   </Link>
                 </li>
                 <li className="navbar-dropdown-item">
-                  <Link
-                    to="/login"
-                    className="navbar-dropdown-link"
-                    onClick={handleLinkClick}
-                  >
+                  <Link to="/login" className="navbar-dropdown-link" onClick={handleLinkClick}>
                     Login
                   </Link>
                 </li>
                 <li className="navbar-dropdown-item">
-                  <Link
-                    to="/register"
-                    className="navbar-dropdown-link"
-                    onClick={handleLinkClick}
-                  >
+                  <Link to="/register" className="navbar-dropdown-link" onClick={handleLinkClick}>
                     Sign Up
                   </Link>
                 </li>
