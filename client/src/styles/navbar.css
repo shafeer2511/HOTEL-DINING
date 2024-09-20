@@ -1,122 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap'); 
-
 /* Navbar container */
 .navbar {
-  background-color: #333;
-  padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Adjust page content to not go under the navbar */
-body {
-  padding-top: 60px;
+  background-color: white;
+  padding: 15px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
 }
 
 .navbar-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap: 25rem;
   align-items: center;
 }
 
 /* Logo */
-.navbar-logo {
-  color: #fff;
+.logo a {
+  font-family: 'Arial', sans-serif;
   font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
   text-decoration: none;
-  font-family: "Dela Gothic One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
-
-
-/* Menu items */
-.navbar-menu {
-  list-style: none;
+/* Navigation Links */
+.navbar-links {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
-/* Profile and dropdown container */
-.profile-container {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-/* Profile icon */
-.navbar-profile-icon {
-  color: #fff;
-  font-size: 24px;
-}
-
-/* Dropdown icon */
-.navbar-expand-icon {
-  color: #fff;
-  font-size: 24px;
-}
-
-/* Dropdown menu */
-.navbar-dropdown {
-  position: absolute;
-  top: 80px; /* Adjusted to move it slightly down */
-  right: 50px; /* Adjusted to move it slightly left */
-  top: 75.5px;
-  top: 76px;
-  right: 40px;
-  background-color: #333;
-  color: #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  list-style: none;
-  padding: 15px;
-  
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-/* Optional: Add some rounding to the edges */
-}
-
-/* Dropdown items */
-.navbar-dropdown-item {
-  margin: 10px 0; /* Increase the margin between items */
-}
-
-/* Dropdown links */
-.navbar-dropdown-link {
+.navbar-links a {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
   text-decoration: none;
-  color: #ffffff;
-  font-size: 16px;
-  padding: 10px 15px; /* Add some padding for spacing inside */
-  display: block;
-  border-radius: 4px;
+  margin: 0 20px;
   position: relative;
-  overflow: hidden;
+  padding-bottom: 5px;
 }
 
-/* Underline effect */
-.navbar-dropdown-link::after {
+.navbar-links a:hover {
+  color: #e67e22;
+}
+
+.navbar-links a::after {
   content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 35%;
+  width: 100%;
   height: 2px;
-  background-color: #27ff52;
-  transform: translateX(-100%);
-  transition: transform 0.4s ease;
+  background-color: #e67e22;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
-/* Underline on hover */
-.navbar-dropdown-link:hover::after {
-  transform: translateX(0);
+.navbar-links a:hover::after {
+  transform: scaleX(1);
 }
 
-/* Optionally, change link color on hover */
-.navbar-dropdown-link:hover {
-  color: #ffffff;
+/* Right section: Login */
+.login-section a {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  text-decoration: none;
+}
+
+.login-section a:hover {
+  color: #e67e22;
+}
+
+.login-icon {
+  margin-left: 5px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .logo {
+    flex: 1;
+  }
 }
