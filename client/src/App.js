@@ -9,6 +9,8 @@ import HotelDetails from './components/HotelDetails';
 import React, { useState } from 'react';
 import BookingPage from './components/BookingPage';
 import HotelCards from './components/HotelCards';
+import Header from './components/Header';
+
 // Define the hotels array here or import if it's in a separate file
 const hotels = [
   {
@@ -68,6 +70,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
+        <Route path="/Header" element={<Header />}/>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/register" element={<RegisterPage />} />
