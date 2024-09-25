@@ -1,22 +1,31 @@
 import React from 'react';
-import Navbar from "./Navbar";
-//import SearchForm from "..//SearchForm";
+ // Ensure this is defined if you want to use it
 import "../styles/Header.css";
 
 const Header = () => {
   return (
-
     <div className='holder'>
-        <header className='header'>
-            
-            <div className='header-content flex flex-c text-center text-white'>
-                <h2 className='header-title text-capitalize'>find your book of choice.</h2><br />
-                <p className='header-text fs-18 fw-3'>Welcome to your digital haven for book lovers! Explore thousands of books across different genres, from fiction to non-fiction, all in one place. With personalized recommendations and an intuitive search, finding your next great read has never been easier.</p>
-                
-            </div>
-        </header>
+      <header className='header'>
+        <div className='header-content flex flex-c text-center text-white'>
+          <h2 className='header-title text-capitalize'>find your own ambience</h2>
+          <br />
+          <p className='header-text fs-18 fw-3'>
+            "Good food is the foundation of genuine happiness. Indulge in every bite, savor every flavor, and let your taste buds explore a world of culinary delights."
+          </p>
+
+          {/* Add the Search Box here */}
+          <div className='search-box'>
+            <input 
+              type='text' 
+              placeholder='Search...' 
+              className='search-input' 
+            />
+            <button className='search-button'>Search</button>
+          </div>
+        </div>
+      </header>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
