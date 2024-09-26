@@ -1,7 +1,7 @@
 /* Navbar container */
 .navbar {
   background-color: white;
-  padding: 20px; /* Keep padding consistent */
+  padding: 30px; /* Keep padding consistent */
   min-height: 80px; /* Minimum height for the navbar */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -29,7 +29,7 @@
 /* Navigation Links */
 .navbar-links {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex: 1;
 }
 
@@ -39,7 +39,7 @@
   text-transform: uppercase;
   color: black;
   text-decoration: none;
-  margin: 0 20px;
+  margin: 0 40px;
   position: relative;
   padding-bottom: 5px;
 }
