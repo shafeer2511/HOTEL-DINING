@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/HotelDetails.css'; // Import the CSS file
-
 function HotelDetails({ hotels, isLoggedIn }) {
   const { id } = useParams();
   const navigate = useNavigate();

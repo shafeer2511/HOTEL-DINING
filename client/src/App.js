@@ -11,6 +11,7 @@ import BookingPage from './components/BookingPage';
 import HotelCards from './components/HotelCards';
 import Header from './components/Header';
 import hotel1 from './assests/hotel3.jpg';
+<<<<<<< Updated upstream
 import hotel2 from './assests/hotel4.jpg';
 import hotel3 from './assests/hotel5.jpg';
 import hotel4 from './assests/hotel6.jpg';
@@ -19,6 +20,10 @@ import hotel6 from './assests/hotel8.jpg';
 
 
 export const hotels = [
+=======
+// Define the hotels array here or import if it's in a separate file
+const hotels = [
+>>>>>>> Stashed changes
   {
     name: 'Outdoor Cafe',
     rating: 4.5,

@@ -2,7 +2,8 @@
     min-height: 75vh;
     background: linear-gradient(rgba(141, 39, 174, 0.3), rgba(141, 39, 174, 0.5)), url("../images/bg.jpg") center/cover no-repeat;
     flex-direction: column;
-    text-align: center; /* Center text */
+    text-align: center;
+
 }
 
 .header{
@@ -18,8 +19,8 @@
     margin-bottom: 2.8rem;
     opacity: 0.8;
     max-width: 770px;
-    margin-left: auto;  /* Center alignment */
-    margin-right: auto; /* Center alignment */
+    margin-left: auto;  
+    margin-right: auto; 
 }
 
 .search-box {
@@ -27,6 +28,7 @@
     justify-content: center; /* Center the entire search box */
     align-items: center; /* Vertically align input and button */
     width: 100%;
+<<<<<<< Updated upstream
     max-width: 580px; /* Max width for the search box */
     margin: 20px auto; /* Center the search box */
 }
@@ -49,8 +51,35 @@
     cursor: pointer;
     font-size: 2rem; /* Match the font size */
     margin-left: 0px; /* Remove gap between input and button */
+=======
+    max-width: 680px;
+    margin: 20px auto; 
+}
+
+.search-input {
+    padding: 0.6rem 1rem; 
+    border-radius: 3.8rem;
+    font-size: 2rem;
+    width: calc(100% - 100px); 
+    border: 1px solid #ccc; 
+}
+
+.search-input::placeholder {
+    opacity: 0.9; 
+}
+
+.search-button {
+    padding: 0.6rem 1.4rem;
+    border-radius: 3.8rem;
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem; 
+    margin-left: 10px; 
+>>>>>>> Stashed changes
 }
 
 .search-button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #0056b3; 
 }
