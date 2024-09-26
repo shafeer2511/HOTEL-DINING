@@ -5,6 +5,10 @@
     text-align: center; /* Center text */
 }
 
+.header{
+    margin-top: -100px;
+}
+
 .header-title {
     font-size: 4.2rem;
 }
@@ -23,12 +27,12 @@
     justify-content: center; /* Center the entire search box */
     align-items: center; /* Vertically align input and button */
     width: 100%;
-    max-width: 680px; /* Max width for the search box */
+    max-width: 580px; /* Max width for the search box */
     margin: 20px auto; /* Center the search box */
 }
 
 .search-input {
-    padding: 0.6rem 1rem; /* Adjust padding */
+    padding: 0.6rem 2.5rem; /* Adjust padding */
     border-radius: 3.8rem 0 0 3.8rem; /* Round left side only */
     font-size: 2rem;
     width: calc(100% - 140px); /* Adjust width based on button size */
