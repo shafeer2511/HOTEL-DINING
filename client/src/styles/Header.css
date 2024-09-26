@@ -28,13 +28,12 @@
     justify-content: center; /* Center the entire search box */
     align-items: center; /* Vertically align input and button */
     width: 100%;
-<<<<<<< Updated upstream
     max-width: 580px; /* Max width for the search box */
     margin: 20px auto; /* Center the search box */
 }
 
 .search-input {
-    padding: 0.6rem 2.5rem; /* Adjust padding */
+    padding: 1rem 2.5rem; /* Adjust padding */
     border-radius: 3.8rem 0 0 3.8rem; /* Round left side only */
     font-size: 2rem;
     width: calc(100% - 140px); /* Adjust width based on button size */
@@ -43,41 +42,14 @@
 }
 
 .search-button {
-    padding: 0.7rem 1.4rem; /* Consistent padding with input */
+    padding: 1rem 1.4rem; /* Consistent padding with input */
     border-radius: 0 3.8rem 3.8rem 0; /* Round right side only */
     background-color: #007bff; /* Primary color */
     color: white;
     border: none;
     cursor: pointer;
     font-size: 2rem; /* Match the font size */
-    margin-left: 0px; /* Remove gap between input and button */
-=======
-    max-width: 680px;
-    margin: 20px auto; 
-}
-
-.search-input {
-    padding: 0.6rem 1rem; 
-    border-radius: 3.8rem;
-    font-size: 2rem;
-    width: calc(100% - 100px); 
-    border: 1px solid #ccc; 
-}
-
-.search-input::placeholder {
-    opacity: 0.9; 
-}
-
-.search-button {
-    padding: 0.6rem 1.4rem;
-    border-radius: 3.8rem;
-    background-color: #007bff; 
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 2rem; 
-    margin-left: 10px; 
->>>>>>> Stashed changes
+    margin-left: 0px; /* Remove gap between input and button */ 
 }
 
 .search-button:hover {
