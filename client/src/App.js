@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginPage from './components/Login';
+import Login from './components/Login';
 import RegisterPage from './components/Register';
 import HomePage from './components/HomePage';
 import BookTable from './components/RestaurantGrid';
@@ -70,15 +70,14 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/Header" element={<Header />}/>
+        <Route path="/Header" element={<Header />} />
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/hotel-cards" element={<HotelCards/>}/>
-        <Route path="/Book Table" element={<BookTable />} />
+        <Route path="/hotel-cards" element={<HotelCards />} />
+        <Route path="/book-table" element={<BookTable />} /> {/* Corrected the path here */}
         <Route path="/hotels/:id" element={<HotelDetails hotels={hotels} isLoggedIn={isLoggedIn} />} />
         <Route path="/book/:id" element={<BookingPage />} /> {/* Booking page route */}
-
       </Routes>
     </Router>
   );
