@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/navbar.css'; // Make sure the CSS file is updated
+import { Link } from 'react-router-dom'; 
+import '../styles/navbar.css';
 
 const Navbar = () => {
   return (
@@ -7,21 +8,21 @@ const Navbar = () => {
       <div className="navbar-container">
         {/* Left section: Logo */}
         <div className="logo">
-          <a href="#">FREENCY DINE-IN</a>
+          <Link to="/">FREENCY DINE-IN</Link>
         </div>
 
         {/* Center section: Navigation Links */}
         <div className="navbar-links">
-          <a href="#">Home</a>
-          <a href="#">Book a Table</a>
-          <a href="#">Menu</a>
+          <Link to="/">Home</Link>
+          <Link to="/book-table">Book a Table</Link>
+          <Link to="/RestaurantGrid">Menu</Link>
         </div>
 
         {/* Right section: Login */}
         <div className="login-section">
-          <a href="#">
+          <Link to="/login">
             LOGIN <span className="login-icon">👤</span>
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
