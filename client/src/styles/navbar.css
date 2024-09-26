@@ -1,7 +1,8 @@
 /* Navbar container */
 .navbar {
   background-color: white;
-  padding: 15px 20px;
+  padding: 20px; /* Keep padding consistent */
+  min-height: 80px; /* Minimum height for the navbar */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 10;
@@ -9,10 +10,11 @@
 
 .navbar-container {
   display: flex;
-  justify-content: space-around;
-  gap: 25rem;
-  align-items: center;
+  justify-content: space-between; /* Change to space-between for better layout */
+  align-items: center; /* Center items vertically */
+  gap: 45rem;
 }
+
 
 /* Logo */
 .logo a {
