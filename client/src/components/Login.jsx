@@ -9,7 +9,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
 
   const validate = () => {
     let valid = true;
-    
+
     if (!email) {
       valid = false;
       alert('Email is required');
@@ -29,18 +29,35 @@ const LoginPage = ({ setIsLoggedIn }) => {
     return valid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log('Form submitted');
-      setIsLoggedIn(true);  // Set the user as logged in
-      navigate('/');  // Redirect to the homepage after login
+      try {
+        const response = await fetch('http://localhost:3008/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          alert(data.message); // "Login successful"
+          setIsLoggedIn(true);  // Set the user as logged in
+          navigate('/');  // Redirect to the homepage after login
+        } else {
+          const data = await response.json();
+          alert(data.message); // "Invalid email or password"
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      }
     }
   };
 
   return (
     <div className="loginbox">
-      <img src='logo.gif' className="avatar" alt="Avatar" />
+      <img src="logo.gif" className="avatar" alt="Avatar" />
 
       <h1>Login Here</h1>
       <form onSubmit={handleSubmit}>
@@ -61,10 +78,9 @@ const LoginPage = ({ setIsLoggedIn }) => {
         />
 
         <input type="submit" value="Login" />
-        {/* Link to the registration page */}
         <div className="reg-log">
           <h4>If you don't have an account</h4>
-          <Link to="/register" className='now'>Register Now</Link>
+          <Link to="/register" className="now">Register Now</Link>
         </div>
       </form>
     </div>

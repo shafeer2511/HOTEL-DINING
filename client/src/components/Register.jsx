@@ -46,10 +46,24 @@ const RegisterPage = () => {
     return valid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log('Registration submitted:', { name, phone, email, password });
+      const userData = { name, phone, email, password };
+      try {
+        const response = await fetch('http://localhost:3008/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(userData),
+        });
+        if (response.ok) {
+          console.log('User registered successfully');
+        } else {
+          console.error('Error registering user');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
     }
   };
 
@@ -96,7 +110,7 @@ const RegisterPage = () => {
         <input type="submit" value="Register" />
         <div className="reg-log">
           <h4>If you already registered</h4>
-          <Link to="/login" className='now'>Login here</Link>
+          <Link to="/login" className="now">Login here</Link>
         </div>
       </form>
     </div>

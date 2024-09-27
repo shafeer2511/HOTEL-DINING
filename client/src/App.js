@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './components/Login';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import LoginPage from './components/Login'; // Make sure this matches your component name
 import RegisterPage from './components/Register';
 import HomePage from './components/HomePage';
 import BookTable from './components/RestaurantGrid';
@@ -16,7 +16,6 @@ import hotel3 from './assests/hotel5.jpg';
 import hotel4 from './assests/hotel6.jpg';
 import hotel5 from './assests/hotel7.jpg';
 import hotel6 from './assests/hotel8.jpg';
-
 
 export const hotels = [
   {
@@ -69,21 +68,35 @@ export const hotels = [
   },
 ];
 
+// ProtectedRoute component to guard the booking page
+function ProtectedRoute({ isLoggedIn, children }) {
+  return isLoggedIn ? children : <Navigate to="/login" />;
+}
+
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // This state determines if the user is logged in or not.
 
   return (
     <Router>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Routes>
         <Route path="/Header" element={<Header />} />
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/hotel-cards" element={<HotelCards />} />
-        <Route path="/book-table" element={<BookTable />} /> {/* Corrected the path here */}
+        <Route path="/book-table" element={<BookTable />} />
         <Route path="/hotels/:id" element={<HotelDetails hotels={hotels} isLoggedIn={isLoggedIn} />} />
-        <Route path="/book/:id" element={<BookingPage />} /> {/* Booking page route */}
+
+        {/* Protect the BookingPage route */}
+        <Route
+          path="/book/:id"
+          element={
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <BookingPage />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </Router>
   );

@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);  // Update the login state to false
+    navigate('/');  // Navigate to the homepage after logging out
   };
 
   return (
@@ -29,11 +35,17 @@ const Navbar = () => {
           <Link to="/RestaurantGrid" onClick={toggleMobileMenu}>Menu</Link>
         </div>
 
-        {/* Right section: Login */}
+        {/* Right section: Login/Logout */}
         <div className={`login-section ${isMobileMenuOpen ? 'active' : ''}`}>
-          <Link to="/login" onClick={toggleMobileMenu}>
-            LOGIN <span className="login-icon">👤</span>
-          </Link>
+          {isLoggedIn ? (
+            <button onClick={handleLogout}>
+              LOGOUT <span className="login-icon">👤</span>
+            </button>
+          ) : (
+            <Link to="/login" onClick={toggleMobileMenu}>
+              LOGIN <span className="login-icon">👤</span>
+            </Link>
+          )}
         </div>
       </div>
     </nav>
