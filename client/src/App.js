@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import LoginPage from './components/Login'; // Make sure this matches your component name
 import RegisterPage from './components/Register';
 import HomePage from './components/HomePage';
-import BookTable from './components/RestaurantGrid';
+import RestaurantGridAndList from './components/RestaurantGridAndList';
 import HotelDetails from './components/HotelDetails';
 import React, { useState } from 'react';
 import BookingPage from './components/BookingPage';
@@ -85,7 +85,7 @@ function App() {
         <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/hotel-cards" element={<HotelCards />} />
-        <Route path="/book-table" element={<BookTable />} />
+        <Route path="/book-table" element={<RestaurantGridAndList />} />
         <Route path="/hotels/:id" element={<HotelDetails hotels={hotels} isLoggedIn={isLoggedIn} />} />
 
         {/* Protect the BookingPage route */}
