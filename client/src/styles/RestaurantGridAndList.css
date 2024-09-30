@@ -70,7 +70,7 @@
     display: flex; /* Flexbox for restaurant cards */
     
     flex-wrap: wrap; /* Wrap cards in multiple lines if needed */
-    gap: 20px; /* Space between cards */
+    gap: 35px; /* Space between cards */
     justify-content: flex-start; /* Align to the start */
   }
   
@@ -79,7 +79,8 @@
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 250px;
+    width: 350px;
+    padding-top: 20px;
     transition: transform 0.3s ease-in-out;
   }
   
