@@ -6,6 +6,7 @@ import pp from '../assests/pizzapalace.jpeg';
 import cl from '../assests/coconut lagoon.jpeg';
 import bq from '../assests/barbeque.jpeg';
 import dw from '../assests/dragonwok.avif';
+import Footer from './Footer';
 const RestaurantGridAndList = () => {
   const [filter, setFilter] = useState(""); // For filtering restaurants
 
@@ -164,6 +165,7 @@ const RestaurantGridAndList = () => {
   const filteredRestaurants = filter ? restaurants.filter((restaurant) => restaurant.cuisine === filter) : restaurants;
 
   return (
+    <div>
     <div className="restaurant-grid-container">
       <div className="restaurant-grid-sidebar">
         <h2 className="restaurant-grid-title">Quick Filters</h2>
@@ -205,6 +207,9 @@ const RestaurantGridAndList = () => {
           </div>
         ))}
       </div>
+        
+    </div>
+    <Footer />
     </div>
   );
 };

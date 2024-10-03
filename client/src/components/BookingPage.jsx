@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+//import Footer from './Footer';
 import '../styles/BookingPage.css'; // Create this file for styling
 
 function BookingPage() {
@@ -23,6 +24,7 @@ function BookingPage() {
   };
 
   return (
+    <div>
     <div className="booking-page">
       <h2>Book a Table</h2>
       <div className="booking-form">
@@ -46,7 +48,11 @@ function BookingPage() {
         </label>
         <p>Total Cost: ${totalCost}</p>
         <button onClick={handleBooking}>Confirm Booking</button>
+        
       </div>
+      
+    </div>
+    
     </div>
   );
 }
