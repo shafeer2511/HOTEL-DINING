@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import '../styles/RestaurantGridAndList.css'; // Create a new CSS file for the combined component
 import spiceroute from '../assests/Spice-Routes-Asian.png';
 import rc from '../assests/RC.avif';
-
+import pp from '../assests/pizzapalace.jpeg';
+import cl from '../assests/coconut lagoon.jpeg';
+import bq from '../assests/barbeque.jpeg';
 const RestaurantGridAndList = () => {
   const [filter, setFilter] = useState(""); // For filtering restaurants
 
@@ -41,7 +43,7 @@ const RestaurantGridAndList = () => {
     {
         id: 3,
         name: "Pizza Palace",
-        image: "restaurant3.jpg",
+        image: pp,
         cuisine: "Fast Food",
         location: "Main Street, Mumbai",
         rating: 4.0,
@@ -49,7 +51,7 @@ const RestaurantGridAndList = () => {
       {
         id: 4,
         name: "Coconut Lagoon",
-        image: "restaurant4.jpg",
+        image: cl,
         cuisine: "South Indian",
         location: "Marine Drive, Kochi",
         rating: 4.3,
@@ -57,7 +59,7 @@ const RestaurantGridAndList = () => {
       {
           id: 5,
           name: "Barbeque Nation",
-          image: "restaurant5.jpg",
+          image: bq,
           cuisine: "North Indian",
           location: "High Street, Pune",
           rating: 4.6,
@@ -142,14 +144,14 @@ const RestaurantGridAndList = () => {
           location: "Phoenix Mall, Chennai",
           rating: 4.1,
         },
-        {
-          id: 16,
-          name: "Udupi Delight",
-          image: "restaurant16.jpg",
-          cuisine: "South Indian",
-          location: "Salt Lake, Kolkata",
-          rating: 4.7,
-        },
+        // {
+        //   id: 16,
+        //   name: "Udupi Delight",
+        //   image: "restaurant16.jpg",
+        //   cuisine: "South Indian",
+        //   location: "Salt Lake, Kolkata",
+        //   rating: 4.7,
+        // },
   ];
 
   const handleFilterClick = (cuisine) => {
