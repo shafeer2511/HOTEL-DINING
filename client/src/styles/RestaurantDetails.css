@@ -1,0 +1,26 @@
+.restaurant-details-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .restaurant-details-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .reserve-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reserve-btn:hover {
+    background-color: #0056b3;
+  }
+  
