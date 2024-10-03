@@ -16,7 +16,10 @@ import hotel3 from './assests/hotel5.jpg';
 import hotel4 from './assests/hotel6.jpg';
 import hotel5 from './assests/hotel7.jpg';
 import hotel6 from './assests/hotel8.jpg';
-
+import spiceroute from './assests/Spice-Routes-Asian.png';
+import rc from './assests/RC.avif';
+import RestaurantDetails from './components/RestaurentDetails';
+import Footer from './components/Footer';
 export const hotels = [
   {
     name: 'Outdoor Cafe',
@@ -68,38 +71,70 @@ export const hotels = [
   },
 ];
 
+export const restaurants = [
+  {
+    id: 1,
+    name: "The Spice Route",
+    image: spiceroute,
+    cuisine: "North Indian",
+    location: "Connaught Place, Delhi",
+    rating: 4.7,
+    description: "A delightful experience of North Indian cuisine with rich flavors and aromatic spices.",
+    menu: ["Butter Chicken", "Paneer Tikka", "Biryani", "Naan"],
+  },
+  {
+    id: 2,
+    name: "Royal Chettinadu",
+    image: rc,
+    cuisine: "Chinese",
+    location: "MG Road, Bengaluru",
+    rating: 4.5,
+    description: "Authentic Chinese dishes with a modern twist, offering a cozy dining experience.",
+    menu: ["Kung Pao Chicken", "Spring Rolls", "Sweet and Sour Pork", "Fried Rice"],
+  },
+];
+
 // ProtectedRoute component to guard the booking page
 function ProtectedRoute({ isLoggedIn, children }) {
   return isLoggedIn ? children : <Navigate to="/login" />;
-}
 
+}
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // This state determines if the user is logged in or not.
 
-  return (
-    <Router>
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-      <Routes>
-        <Route path="/Header" element={<Header />} />
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/hotel-cards" element={<HotelCards />} />
-        <Route path="/book-table" element={<RestaurantGridAndList />} />
-        <Route path="/hotels/:id" element={<HotelDetails hotels={hotels} isLoggedIn={isLoggedIn} />} />
+return (
+  <Router>
+    <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+    <Routes>
+      <Route path="/Header" element={<Header />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/hotel-cards" element={<HotelCards />} />
+      <Route path="/book-table" element={<RestaurantGridAndList />} />
+      
+      {/* Restaurant Details Route */}
+      <Route
+        path="/restaurant/:id"
+        element={<RestaurantDetails restaurants={restaurants} />}
+      />
 
-        {/* Protect the BookingPage route */}
-        <Route
-          path="/book/:id"
-          element={
-            <ProtectedRoute isLoggedIn={isLoggedIn}>
-              <BookingPage />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
-    </Router>
-  );
+      <Route path="/hotels/:id" element={<HotelDetails hotels={hotels} isLoggedIn={isLoggedIn} />} />
+
+      {/* Protect the BookingPage route */}
+      <Route
+        path="/book/:id"
+        element={
+          <ProtectedRoute isLoggedIn={isLoggedIn}>
+            <BookingPage />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
+    <Footer />
+    
+  </Router>
+);
 }
 
 export default App;
