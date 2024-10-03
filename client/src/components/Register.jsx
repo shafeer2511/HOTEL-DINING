@@ -8,6 +8,8 @@ const RegisterPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const validate = () => {
     let valid = true;
@@ -48,20 +50,28 @@ const RegisterPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSuccessMessage(''); // Reset success message
+    setErrorMessage('');   // Reset error message
+
     if (validate()) {
       const userData = { name, phone, email, password };
       try {
-        const response = await fetch('http://localhost:3008/register', {
+        const response = await fetch('http://localhost:3000/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(userData),
         });
+
         if (response.ok) {
+          setSuccessMessage('User registered successfully!');
           console.log('User registered successfully');
         } else {
+          const errorResponse = await response.json();
+          setErrorMessage(errorResponse.message || 'Error registering user');
           console.error('Error registering user');
         }
       } catch (error) {
+        setErrorMessage('Error: Unable to register. Please try again.');
         console.error('Error:', error);
       }
     }
@@ -108,6 +118,10 @@ const RegisterPage = () => {
         />
 
         <input type="submit" value="Register" />
+
+        {successMessage && <p className="success">{successMessage}</p>}
+        {errorMessage && <p className="error">{errorMessage}</p>}
+
         <div className="reg-log">
           <h4>If you already registered</h4>
           <Link to="/login" className="now">Login here</Link>

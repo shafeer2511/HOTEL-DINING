@@ -41,7 +41,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
 
         if (response.ok) {
           const data = await response.json();
-          alert(data.message); // "Login successful"
+           // "Login successful"
           setIsLoggedIn(true);  // Set the user as logged in
           navigate('/');  // Redirect to the homepage after login
         } else {
