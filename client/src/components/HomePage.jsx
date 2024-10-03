@@ -7,8 +7,6 @@ import {hotels} from '../App';
 function HomePage() {
   
     
-    
-
   return (
     <>
     

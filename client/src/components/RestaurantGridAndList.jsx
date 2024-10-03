@@ -7,6 +7,14 @@ import cl from '../assests/coconut lagoon.jpeg';
 import bq from '../assests/barbeque.jpeg';
 import dw from '../assests/dragonwok.avif';
 import Footer from './Footer';
+
+import burger from '../assests/burger.jpeg';
+import dosaplaza from '../assests/dosaplaza.jpeg';
+import rgr from '../assests/rgr.jpeg';
+import sz from '../assests/szechuan.jpeg';
+import taco from '../assests/taco.jpeg';
+import idly from '../assests/idly_express.jpeg';
+
 const RestaurantGridAndList = () => {
   const [filter, setFilter] = useState(""); // For filtering restaurants
 
@@ -77,7 +85,7 @@ const RestaurantGridAndList = () => {
         {
           id: 7,
           name: "Burger Shack",
-          image: "restaurant7.jpg",
+          image: burger,
           cuisine: "Fast Food",
           location: "Hill Road, Bandra, Mumbai",
           rating: 4.1,
@@ -85,7 +93,7 @@ const RestaurantGridAndList = () => {
         {
           id: 8,
           name: "Dosa Plaza",
-          image: "restaurant8.jpg",
+          image: dosaplaza,
           cuisine: "South Indian",
           location: "IT Park, Chennai",
           rating: 4.2,
@@ -93,7 +101,7 @@ const RestaurantGridAndList = () => {
         {
           id: 9,
           name: "The Royal Grill",
-          image: "restaurant9.jpg",
+          image: rgr,
           cuisine: "North Indian",
           location: "Banjara Hills, Hyderabad",
           rating: 4.8,
@@ -101,7 +109,7 @@ const RestaurantGridAndList = () => {
         {
           id: 10,
           name: "Szechuan Palace",
-          image: "restaurant10.jpg",
+          image: sz,
           cuisine: "Chinese",
           location: "Park Street, Kolkata",
           rating: 4.5,
@@ -109,7 +117,7 @@ const RestaurantGridAndList = () => {
         {
           id: 11,
           name: "Taco Fiesta",
-          image: "restaurant11.jpg",
+          image: taco,
           cuisine: "Fast Food",
           location: "Sector 29, Noida",
           rating: 4.3,
@@ -117,35 +125,35 @@ const RestaurantGridAndList = () => {
         {
           id: 12,
           name: "Idli Express",
-          image: "restaurant12.jpg",
+          image: idly,
           cuisine: "South Indian",
           location: "Whitefield, Bengaluru",
           rating: 4.6,
         },
-        {
-          id: 13,
-          name: "The Curry House",
-          image: "restaurant13.jpg",
-          cuisine: "North Indian",
-          location: "MG Road, Ahmedabad",
-          rating: 4.5,
-        },
-        {
-          id: 14,
-          name: "Mandarin Magic",
-          image: "restaurant14.jpg",
-          cuisine: "Chinese",
-          location: "South Extension, Delhi",
-          rating: 4.2,
-        },
-        {
-          id: 15,
-          name: "Burger King",
-          image: "restaurant15.jpg",
-          cuisine: "Fast Food",
-          location: "Phoenix Mall, Chennai",
-          rating: 4.1,
-        },
+        // {
+        //   id: 13,
+        //   name: "The Curry House",
+        //   image: "restaurant13.jpg",
+        //   cuisine: "North Indian",
+        //   location: "MG Road, Ahmedabad",
+        //   rating: 4.5,
+        // },
+        // {
+        //   id: 14,
+        //   name: "Mandarin Magic",
+        //   image: "restaurant14.jpg",
+        //   cuisine: "Chinese",
+        //   location: "South Extension, Delhi",
+        //   rating: 4.2,
+        // },
+        // {
+        //   id: 15,
+        //   name: "Burger King",
+        //   image: "restaurant15.jpg",
+        //   cuisine: "Fast Food",
+        //   location: "Phoenix Mall, Chennai",
+        //   rating: 4.1,
+        // },
         // {
         //   id: 16,
         //   name: "Udupi Delight",
