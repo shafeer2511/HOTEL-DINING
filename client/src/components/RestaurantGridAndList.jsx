@@ -5,6 +5,7 @@ import rc from '../assests/RC.avif';
 import pp from '../assests/pizzapalace.jpeg';
 import cl from '../assests/coconut lagoon.jpeg';
 import bq from '../assests/barbeque.jpeg';
+import dw from '../assests/dragonwok.avif';
 const RestaurantGridAndList = () => {
   const [filter, setFilter] = useState(""); // For filtering restaurants
 
@@ -67,7 +68,7 @@ const RestaurantGridAndList = () => {
         {
           id: 6,
           name: "Dragon Wok",
-          image: "restaurant6.jpg",
+          image: dw,
           cuisine: "Chinese",
           location: "Cyber Hub, Gurgaon",
           rating: 4.4,
