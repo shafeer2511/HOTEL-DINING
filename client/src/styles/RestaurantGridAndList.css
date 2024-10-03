@@ -6,7 +6,7 @@
 .restaurant-grid-container{
     display: flex;
     flex-direction: row;
-
+    
 }
 
 .restaurant-grid-sidebar {
@@ -68,7 +68,7 @@
   .restaurant-list {
     flex: 1; /* Take remaining space */
     display: flex; /* Flexbox for restaurant cards */
-    
+    padding-bottom: 50px;
     flex-wrap: wrap; /* Wrap cards in multiple lines if needed */
     gap: 35px; /* Space between cards */
     justify-content: flex-start; /* Align to the start */
