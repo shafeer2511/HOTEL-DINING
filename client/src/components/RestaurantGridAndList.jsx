@@ -12,10 +12,11 @@ import rgr from '../assests/rgr.jpeg';
 import sz from '../assests/szechuan.jpeg';
 import taco from '../assests/taco.jpeg';
 import idly from '../assests/idly_express.jpeg';
+import { useNavigate } from 'react-router-dom';
 
 const RestaurantGridAndList = () => {
   const [filter, setFilter] = useState(""); // For filtering restaurants
-
+  const navigate = useNavigate();
   const cuisines = [
     'North Indian',
     'Chinese',
@@ -170,6 +171,10 @@ const RestaurantGridAndList = () => {
   // Filtering restaurants based on selected cuisine
   const filteredRestaurants = filter ? restaurants.filter((restaurant) => restaurant.cuisine === filter) : restaurants;
 
+  const handleViewDetails = (id) => {
+    navigate(`/restaurant/${id}`);
+  };
+
   return (
     <div className="restaurant-grid-container">
       <div className="restaurant-grid-sidebar">
@@ -180,7 +185,7 @@ const RestaurantGridAndList = () => {
             {cuisines.map((cuisine) => (
               <li
                 key={cuisine}
-                className="restaurant-grid-list-item"
+                className={`restaurant-grid-list-item ${filter === cuisine ? 'active' : ''}`}
                 onClick={() => handleFilterClick(cuisine)} // Filter on click
               >
                 {cuisine}
@@ -207,7 +212,7 @@ const RestaurantGridAndList = () => {
               <p><strong>Cuisine:</strong> {restaurant.cuisine}</p>
               <p><strong>Location:</strong> {restaurant.location}</p>
               <p><strong>Rating:</strong> ⭐ {restaurant.rating}/5</p>
-              <button className="reserve-btn">View Details</button>
+              <button className="view-details-btn" onClick={() => handleViewDetails(restaurant.id)}>View Details</button>
             </div>
           </div>
         ))}
@@ -215,5 +220,6 @@ const RestaurantGridAndList = () => {
     </div>
   );
 };
+
 
 export default RestaurantGridAndList;
