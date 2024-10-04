@@ -124,4 +124,22 @@
   .reserve-btn:hover {
     background-color: #0056b3;
   }
+
+  .view-details-btn {
+    display: inline-block; /* Makes the button inline but with block behavior */
+    padding: 10px 20px; /* Adjusts the padding for button size */
+    background-color: blueviolet; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Centers text */
+    text-decoration: none; /* Removes the underline from the text */
+    font-size: 16px; /* Sets the font size */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering */
+    transition: background-color 0.3s ease; /* Adds a smooth transition effect */
+  }
+  
+  .view-details-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
   
