@@ -3,7 +3,7 @@ import HotelCards from './HotelCards';
 import Header from './Header';
 import '../styles/homePage.css';
 import { hotels } from '../App'; // Assuming hotels array is imported from App.js or similar
-
+import Footer from './Footer';
 function HomePage() {
   const [searchQuery, setSearchQuery] = useState(''); // State for search input
 
@@ -31,6 +31,7 @@ function HomePage() {
           )}
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
