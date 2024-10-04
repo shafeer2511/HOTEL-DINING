@@ -275,7 +275,7 @@ return (
         }
       />
     </Routes>
-    <Footer />
+    
     
   </Router>
 );

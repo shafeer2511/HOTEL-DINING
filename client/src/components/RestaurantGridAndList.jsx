@@ -6,6 +6,8 @@ import pp from '../assests/pizzapalace.jpeg';
 import cl from '../assests/coconut lagoon.jpeg';
 import bq from '../assests/barbeque.jpeg';
 import dw from '../assests/dragonwok.avif';
+import Footer from './Footer';
+
 import burger from '../assests/burger.jpeg';
 import dosaplaza from '../assests/dosaplaza.jpeg';
 import rgr from '../assests/rgr.jpeg';
@@ -176,6 +178,7 @@ const RestaurantGridAndList = () => {
   };
 
   return (
+    <div>
     <div className="restaurant-grid-container">
       <div className="restaurant-grid-sidebar">
         <h2 className="restaurant-grid-title">Quick Filters</h2>
@@ -217,6 +220,9 @@ const RestaurantGridAndList = () => {
           </div>
         ))}
       </div>
+        
+    </div>
+    <Footer />
     </div>
   );
 };
