@@ -1,20 +1,54 @@
-.home-header{
+.home-header {
   margin-top: 10rem;
 }
 
 .home-page {
-    min-height: 100vh;
-    padding-top: 80px;
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-around; 
-    align-items: flex-start; 
-    gap: 10px; 
-    background-size: cover;
-    background-position: center;
-    overflow-x: hidden;
+  min-height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column; /* Ensures the heading is placed above the cards */
+  align-items: center; /* Center the content horizontally */
+  gap: 20px; /* Increased gap for better spacing */
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+}
+
+/* Top Picks Heading */
+.top-picks-heading {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Hotel Grid Layout */
+.hotel-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the hotel cards */
+  gap: 20px 90px;
+  width: 100%;
+  max-width: 1200px; /* To limit the width of the grid */
+  padding: 0 20px; /* Adds padding to the sides of the grid */
+}
+
+body {
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .hotel-grid {
+    justify-content: space-between; /* Adjust spacing for two cards per row */
   }
-  body {
-    overflow-y: auto;
-    height: 100%;
+}
+
+@media (max-width: 768px) {
+  .hotel-grid {
+    flex-direction: column;
+    align-items: center; /* Center the single card */
   }
+}
