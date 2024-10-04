@@ -1,8 +1,7 @@
 import React from 'react';
- // Ensure this is defined if you want to use it
 import "../styles/Header.css";
 
-const Header = () => {
+const Header = ({ searchQuery, setSearchQuery }) => {
   return (
     <>
       <header className='header'>
@@ -13,14 +12,16 @@ const Header = () => {
             "Good food is the foundation of genuine happiness. Indulge in every bite, savor every flavor, and let your taste buds explore a world of culinary delights."
           </p>
 
-          {/* Add the Search Box here */}
+          {/* Search Box */}
           <div className='search-box'>
-            <input 
-              type='text' 
-              placeholder='Search...' 
-              className='search-input' 
+            <input
+              type='text'
+              placeholder='Search...'
+              className='search-input'
+              value={searchQuery} // Bind the input to searchQuery state
+              onChange={(e) => setSearchQuery(e.target.value)} // Update search query on input change
             />
-            <button className='search-button'>Search</button>
+            <button className='search-button'>Search</button> {/* Optional: You can remove this button if not needed */}
           </div>
         </div>
       </header>
