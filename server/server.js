@@ -11,7 +11,7 @@ app.use(cors()); // Enable CORS for your React frontend
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'vishal2005',
+  password: '2511',
   database: 'hotel_dining',
 });
 
