@@ -14,35 +14,69 @@
   overflow-x: hidden;
 }
 
-/* Top Picks Heading */
-.top-picks-heading {
+/* Top Rated Restaurants Heading */
+.top-rated-heading {
   font-size: 36px;
   font-weight: bold;
   text-align: center;
   color: #333;
-  margin-bottom: 40px;
+  margin-bottom: 20px; /* Reduced margin for better spacing */
 }
 
-/* Hotel Grid Layout */
-.hotel-grid {
+/* Restaurant Slider Container */
+.restaurant-slider {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center the hotel cards */
-  gap: 20px 90px;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  max-width: 1200px; /* To limit the width of the grid */
-  padding: 0 20px; /* Adds padding to the sides of the grid */
+  max-width: 1200px; /* To limit the width of the slider */
+  padding: 0 20px; /* Adds padding to the sides of the slider */
 }
 
-body {
-  overflow-y: auto;
-  height: 100%;
+/* Restaurant Cards Layout */
+.restaurant-cards {
+  display: flex;
+  overflow: hidden; /* Optional to hide overflowing items */
+  width: 80%; /* Adjust based on your layout */
+}
+
+/* Individual Restaurant Card */
+.restaurant-card {
+  margin: 0 10px; /* Space between cards */
+  flex: 1; /* Equal width for all cards */
+  padding: 20px; /* Increased padding for a better look */
+  border: 1px solid #ccc; /* Example border */
+  border-radius: 5px;
+  text-align: center; /* Center text within card */
+  background-color: #fff; /* Background color for cards */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+}
+
+/* Navigation Buttons */
+button {
+  background-color: #e67e22; /* Example button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc; /* Disabled button color */
+  cursor: not-allowed;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .hotel-grid {
-    justify-content: space-between; /* Adjust spacing for two cards per row */
+  .restaurant-slider {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: center; /* Center items */
+  }
+
+  .restaurant-cards {
+    width: 100%; /* Full width for the cards on smaller screens */
+    overflow-x: auto; /* Enable horizontal scroll */
   }
 }
 
@@ -50,5 +84,11 @@ body {
   .hotel-grid {
     flex-direction: column;
     align-items: center; /* Center the single card */
+  }
+
+  /* Adjust restaurant card layout for mobile */
+  .restaurant-card {
+    width: 90%; /* Full width for restaurant cards on mobile */
+    margin: 10px 0; /* Margin above and below cards */
   }
 }
