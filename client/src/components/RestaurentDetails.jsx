@@ -1,14 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/RestaurantDetails.css'; // Ensure this path is correct
-import { restaurants } from '../App'; // Import the restaurants array
 
 const RestaurantDetails = () => {
   const { id } = useParams(); // Get the restaurant ID from the URL
   const navigate = useNavigate(); // For navigation
+  const [restaurant, setRestaurant] = useState(null); // State to store restaurant details
+  const [loading, setLoading] = useState(true); // Loading state
+  const [error, setError] = useState(null); // Error state
 
-  // Find the selected restaurant based on the ID
-  const restaurant = restaurants.find((res) => res.id === parseInt(id));
+  // Fetch restaurant details based on ID
+  useEffect(() => {
+    const fetchRestaurantDetails = async () => {
+      try {
+        const response = await fetch(`http://localhost:3000/api/restaurants/${id}`); // Ensure this matches your API endpoint
+        if (!response.ok) {
+          throw new Error('Failed to fetch restaurant details');
+        }
+        const data = await response.json();
+        setRestaurant(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRestaurantDetails();
+  }, [id]);
+
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
 
   if (!restaurant) {
     return <div className="not-found">Restaurant not found!</div>;
@@ -29,12 +56,12 @@ const RestaurantDetails = () => {
         <p><strong>Cuisine:</strong> {restaurant.cuisine}</p>
         <p><strong>Location:</strong> {restaurant.location}</p>
         <p><strong>Rating:</strong> ⭐ {restaurant.rating}/5</p>
-        <p><strong>Seats Available:</strong> {restaurant.seatsAvailable}</p>
+        <p><strong>Seats Available:</strong> {restaurant.seatsAvailable}</p> {/* Ensure this is in your database */}
         <p className="restaurant-description">{restaurant.description}</p>
 
         <h3>Popular Menu Items:</h3>
         <ul className="menu-list">
-          {restaurant.menu.map((item, index) => (
+          {restaurant.menu && restaurant.menu.map((item, index) => ( // Check if restaurant.menu is defined
             <li key={index} className="menu-item">{item}</li>
           ))}
         </ul>
