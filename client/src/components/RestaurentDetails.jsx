@@ -47,7 +47,7 @@ const RestaurantDetails = () => {
       
       {/* Banner Image */}
       <div className="details-banner">
-        <img src={restaurant.image} alt={restaurant.name} className="restaurant-details-img" />
+        <img src={`http://localhost:3000/assests/${restaurant.image}`} alt={restaurant.name} className="restaurant-details-img" />
       </div>
       
       {/* Restaurant Details */}

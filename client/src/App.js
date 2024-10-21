@@ -14,6 +14,7 @@ import RestaurantDetails from './components/RestaurentDetails';
 // import Footer from './components/Footer';
 import About from './components/About';
 import './styles/About.css';
+import './styles/RestaurantGridAndList.css';
 // Hotel images
 import hotel1 from './assests/hotel3.jpg';
 import hotel2 from './assests/hotel4.jpg';

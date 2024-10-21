@@ -43,7 +43,9 @@ const RestaurantGridAndList = () => {
   // Filtering restaurants based on selected cuisine and tag
   const filteredRestaurants = restaurants.filter((restaurant) => {
     const matchesCuisine = cuisineFilter ? restaurant.cuisine === cuisineFilter : true;
-    const matchesTag = tagFilter ? restaurant.is_veg === tagFilter : true; // Assuming `is_veg` is the field in your database
+    const matchesTag = tagFilter 
+      ? (tagFilter === 'Veg' ? restaurant.is_veg === true : restaurant.is_veg === false) 
+      : true; 
     return matchesCuisine && matchesTag;
   });
 
@@ -89,7 +91,7 @@ const RestaurantGridAndList = () => {
         <div className="restaurant-list">
           {filteredRestaurants.map((restaurant) => (
             <div key={restaurant.id} className="restaurant-card">
-              <img src={require(`../assests/${restaurant.image}`)} alt={restaurant.name} className="restaurant-img" />
+              <img src={`/assets/${restaurant.image}`} alt={restaurant.name} className="restaurant-img" />
               <div className="restaurant-info">
                 <h3>{restaurant.name}</h3>
                 <p><strong>Cuisine:</strong> {restaurant.cuisine}</p>

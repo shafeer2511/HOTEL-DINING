@@ -1,145 +1,111 @@
 .restaurant-container {
-    display: flex; /* Use flex to align sidebar and content side by side */
-    padding: 20px;
-  }
+  display: flex;
+  padding: 20px;
+}
 
-.restaurant-grid-container{
-    display: flex;
-    flex-direction: row;
-    
+.restaurant-grid-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .restaurant-grid-sidebar {
-    width: 250px; /* Width of the sidebar */
-    padding: 20px;
-    display: block;
-    margin-right: 20px; /* Space between sidebar and restaurant list */
-    background-color: #f9f9f9; /* Light gray background for sidebar */
-    border: 1px solid #e0e0e0; /* Light border around the sidebar */
-    border-radius: 8px; /* Rounded corners for a modern look */
-  }
-  
-  
-  .restaurant-grid-filter-section {
-    margin-bottom: 25px; /* Increased space between filter sections */
-    padding-bottom: 15px; /* Add padding at the bottom of each filter section */
-    border-bottom: 1px solid #ddd; /* Add a border to separate sections */
-  }
-  
-  .restaurant-grid-title, .restaurant-grid-subtitle {
-    margin: 0 0 15px 0; /* Add space below headers */
-    font-size: 1.1em; /* Adjust font size */
-    font-weight: bold; /* Make headers bold */
-  }
-  
-  .restaurant-grid-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .restaurant-grid-list-item {
-    margin: 10px 0; /* Add more space between list items */
-    padding: 8px 10px; /* Add padding around the text */
-    background-color: #fff; /* White background for list items */
-    border-radius: 5px; /* Rounded corners for list items */
-    cursor: pointer;
-    border: 1px solid #e0e0e0; /* Light border around each item */
-    transition: background-color 0.3s ease; /* Smooth hover transition */
-  }
-  
-  .restaurant-grid-list-item:hover {
-    background-color: #f0f0f0; /* Slight color change on hover */
-  }
-  
-  .restaurant-grid-show-more {
-    color: #007bff; /* Blue color for the 'Show More' link */
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    background-color: transparent; /* Remove background and border for 'Show More' */
-  }
-  
-  .restaurant-container {
-    display: flex;
-    padding: 20px;
-  }
-  
-  .restaurant-list {
-    flex: 1; /* Take remaining space */
-    display: flex; /* Flexbox for restaurant cards */
-    padding-bottom: 50px;
-    flex-wrap: wrap; /* Wrap cards in multiple lines if needed */
-    gap: 35px; /* Space between cards */
-    justify-content: flex-start; /* Align to the start */
-  }
-  
-  .restaurant-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 350px;
-    padding-top: 20px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .restaurant-card:hover {
-    transform: translateY(-10px);
-  }
-  
-  .restaurant-img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  .restaurant-info {
-    padding: 10px;
-  }
-  
-  .restaurant-info h3 {
-    font-size: 1.2em;
-    margin: 0;
-  }
-  
-  .restaurant-info p {
-    font-size: 0.9em;
-    margin: 5px 0;
-  }
-  
-  .reserve-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .reserve-btn:hover {
-    background-color: #0056b3;
-  }
+  width: 250px;
+  padding: 20px;
+  margin-right: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
 
-  .view-details-btn {
-    display: inline-block; /* Makes the button inline but with block behavior */
-    padding: 10px 20px; /* Adjusts the padding for button size */
-    background-color: blueviolet; /* Button background color */
-    color: white; /* Text color */
-    border: none; /* Removes border */
-    border-radius: 5px; /* Rounded corners */
-    text-align: center; /* Centers text */
-    text-decoration: none; /* Removes the underline from the text */
-    font-size: 16px; /* Sets the font size */
-    cursor: pointer; /* Changes the cursor to a pointer when hovering */
-    transition: background-color 0.3s ease; /* Adds a smooth transition effect */
-  }
-  
-  .view-details-btn:hover {
-    background-color: #45a049; /* Darker green on hover */
-  }
-  
+.restaurant-grid-filter-section {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.restaurant-grid-title,
+.restaurant-grid-subtitle {
+  margin: 0 0 15px 0;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.restaurant-grid-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.restaurant-grid-list-item {
+  margin: 10px 0;
+  padding: 8px 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+.restaurant-grid-list-item:hover {
+  background-color: #f0f0f0;
+}
+
+.restaurant-grid-list-item.active {
+  background-color: #ddd;
+}
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.restaurant-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  flex-basis: calc(20% - 20px);
+  padding-top: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-10px);
+}
+
+.restaurant-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.restaurant-info {
+  padding: 10px;
+}
+
+.restaurant-info h3 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.restaurant-info p {
+  font-size: 0.9em;
+  margin: 5px 0;
+}
+
+.view-details-btn {
+  padding: 10px 20px;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-btn:hover {
+  background-color: #45a049;
+}
