@@ -40,7 +40,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
         });
 
         if (response.ok) {
-          const data = await response.json();
+          
            // "Login successful"
           setIsLoggedIn(true);  // Set the user as logged in
           navigate('/');  // Redirect to the homepage after login
@@ -81,6 +81,10 @@ const LoginPage = ({ setIsLoggedIn }) => {
         <div className="reg-log">
           <h4>If you don't have an account</h4>
           <Link to="/register" className="now">Register Now</Link>
+
+          <div>
+          <Link to="/admin-login" className="now">AdminLogin</Link>
+          </div>
         </div>
       </form>
     </div>

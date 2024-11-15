@@ -1,7 +1,9 @@
+/* Home Header */
 .home-header {
   margin-top: 10rem;
 }
 
+/* Home Page Styles */
 .home-page {
   min-height: 100vh;
   padding-top: 80px;
@@ -23,33 +25,61 @@
   margin-bottom: 20px; /* Reduced margin for better spacing */
 }
 
-/* Restaurant Slider Container */
-.restaurant-slider {
+/* Search Results Section */
+.search-results {
+  display: flex; /* Use flexbox for centering */
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  justify-content: center; /* Center the cards horizontally */
+  align-items: flex-start; /* Align items at the start vertically */
+  gap: 20px; /* Space between cards */
+  max-width: 1200px; /* Max width for the results section */
+  margin: 0 auto; /* Center the results section */
+  padding: 0 20px; /* Optional: Add padding to the sides */
+}
+
+/* Hotel Slider Container */
+.hotel-slider {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Center the slider content */
   width: 100%;
   max-width: 1200px; /* To limit the width of the slider */
   padding: 0 20px; /* Adds padding to the sides of the slider */
 }
 
-/* Restaurant Cards Layout */
-.restaurant-cards {
-  display: flex;
-  overflow: hidden; /* Optional to hide overflowing items */
-  width: 80%; /* Adjust based on your layout */
-}
-
-/* Individual Restaurant Card */
-.restaurant-card {
-  margin: 0 10px; /* Space between cards */
-  flex: 1; /* Equal width for all cards */
-  padding: 20px; /* Increased padding for a better look */
+/* Individual Hotel Card */
+.hotel-card {
+  margin: 0 15px; /* Space between cards */
+  flex: 1 1 250px; /* Allow flexibility with a base width */
+  padding: 250px; /* Adjust padding for a better look */
   border: 1px solid #ccc; /* Example border */
   border-radius: 5px;
   text-align: center; /* Center text within card */
   background-color: #fff; /* Background color for cards */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+  transition: transform 0.3s ease-in-out; /* Animation on hover */
+  font-weight:bold;
+  font-size: larger;
+  /* Added fixed height for uniformity */
+  height: 500px; /* Adjust height as necessary */
+  overflow: hidden; /* Hide overflow content */
+}
+
+.hotel-card img {
+  width: 200%; /* Make image take full width */
+  height: 250px; /* Fixed height for images */
+  object-fit:inherit;
+  margin-top: -200px;
+  margin-left: -120px; /* Cover to maintain aspect ratio */
+}
+
+.hotel-card:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Search Result Images */
+.search-results .hotel-card img {
+  height: 200px; /* Make search result images slightly bigger */
 }
 
 /* Navigation Buttons */
@@ -60,6 +90,9 @@ button {
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  margin: 0 10px; /* Space around buttons */
+  display: flex; /* Align icon and text */
+  align-items: center; /* Center icon vertically */
 }
 
 button:disabled {
@@ -69,26 +102,18 @@ button:disabled {
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .restaurant-slider {
+  .hotel-slider {
     flex-direction: column; /* Stack elements vertically on smaller screens */
     align-items: center; /* Center items */
   }
 
-  .restaurant-cards {
-    width: 100%; /* Full width for the cards on smaller screens */
-    overflow-x: auto; /* Enable horizontal scroll */
-  }
-}
-
-@media (max-width: 768px) {
-  .hotel-grid {
-    flex-direction: column;
-    align-items: center; /* Center the single card */
-  }
-
-  /* Adjust restaurant card layout for mobile */
-  .restaurant-card {
-    width: 90%; /* Full width for restaurant cards on mobile */
+  .hotel-card {
+    width: 90%; /* Full width for hotel cards on smaller screens */
     margin: 10px 0; /* Margin above and below cards */
+  }
+
+  button {
+    width: 100%; /* Full width for buttons on mobile */
+    margin: 10px 0; /* Margin for mobile */
   }
 }

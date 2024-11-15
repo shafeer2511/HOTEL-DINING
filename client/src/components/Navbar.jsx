@@ -13,35 +13,37 @@ const tamilNaduDistricts = [
   "Thiruvarur", "Tenkasi", "Nilgiris"
 ];
 
-const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
+const Navbar = ({ isLoggedIn, setIsLoggedIn, setSelectedCity }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState(''); // State to store selected location
+  const [selectedLocation, setSelectedLocation] = useState('');
   const navigate = useNavigate();
 
+  // Toggle the mobile menu visibility
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleLogout = () => {
-    setIsLoggedIn(false); // Update the login state to false
-    navigate('/'); // Navigate to the homepage after logging out
-  };
-
+  // Handle location selection change
   const handleLocationChange = (event) => {
     const location = event.target.value;
     setSelectedLocation(location);
-    navigate(`/restaurants/location/${location}`); // Navigate to the restaurants page based on selected location
+    setSelectedCity(location); // Pass the selected city to App.js for filtering
+  };
+
+  // Handle user logout
+  const handleLogout = () => {
+    setIsLoggedIn(false); // Update the login status
+    localStorage.setItem('isLoggedIn', 'false'); // Update local storage
+    navigate('/'); // Redirect to homepage on logout
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Left section: Logo */}
         <div className="logo">
           <Link to="/">FREENCY DINE-IN</Link>
         </div>
 
-        {/* Location Selector */}
         <select className="location-selector" value={selectedLocation} onChange={handleLocationChange}>
           <option value="">Select Location</option>
           {tamilNaduDistricts.map((location, index) => (
@@ -49,28 +51,17 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
           ))}
         </select>
 
-        {/* Hamburger Menu Icon */}
         <div className="mobile-menu-icon" onClick={toggleMobileMenu}>
           <span className="hamburger-icon">{isMobileMenuOpen ? '✖' : '☰'}</span>
         </div>
 
-        {/* Center section: Navigation Links */}
         <div className={`navbar-links ${isMobileMenuOpen ? 'active' : ''}`}>
           <Link to="/" onClick={toggleMobileMenu}>Home</Link>
           <Link to="/book-table" onClick={toggleMobileMenu}>Book a Table</Link>
-          <Link to="/RestaurantGrid" onClick={toggleMobileMenu}>Menu</Link>
-        </div>
-
-        {/* Right section: Login/Logout */}
-        <div className={`login-section ${isMobileMenuOpen ? 'active' : ''}`}>
           {isLoggedIn ? (
-            <button onClick={handleLogout}>
-              LOGOUT <span className="login-icon">👤</span>
-            </button>
+            <button className="logout-btn" onClick={handleLogout}>Logout</button>
           ) : (
-            <Link to="/login" onClick={toggleMobileMenu}>
-              LOGIN <span className="login-icon">👤</span>
-            </Link>
+            <Link to="/login" className="login-btn" onClick={toggleMobileMenu}>Login</Link>
           )}
         </div>
       </div>

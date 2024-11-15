@@ -41,13 +41,22 @@ const RestaurantDetails = () => {
     return <div className="not-found">Restaurant not found!</div>;
   }
 
+  const handleReserveClick = () => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; // Check if user is logged in
+    if (isLoggedIn) {
+      navigate(`/book/${restaurant.id}`);
+    } else {
+      navigate('/login'); // Redirect to login page if not logged in
+    }
+  };
+
   return (
     <div className="restaurant-details-container">
       <button className="back-btn" onClick={() => navigate(-1)}>← Back</button>
       
       {/* Banner Image */}
       <div className="details-banner">
-        <img src={`http://localhost:3000/assests/${restaurant.image}`} alt={restaurant.name} className="restaurant-details-img" />
+        <img src={`/assests/${restaurant.image}`} alt={restaurant.name} className="restaurant-details-img" />
       </div>
       
       {/* Restaurant Details */}
@@ -56,17 +65,13 @@ const RestaurantDetails = () => {
         <p><strong>Cuisine:</strong> {restaurant.cuisine}</p>
         <p><strong>Location:</strong> {restaurant.location}</p>
         <p><strong>Rating:</strong> ⭐ {restaurant.rating}/5</p>
-        <p><strong>Seats Available:</strong> {restaurant.seatsAvailable}</p> {/* Ensure this is in your database */}
+        <p><strong>Seats Available:</strong> {restaurant.seats_available}</p>
         <p className="restaurant-description">{restaurant.description}</p>
 
-        <h3>Popular Menu Items:</h3>
-        <ul className="menu-list">
-          {restaurant.menu && restaurant.menu.map((item, index) => ( // Check if restaurant.menu is defined
-            <li key={index} className="menu-item">{item}</li>
-          ))}
-        </ul>
+        <h3>Most Popular Dishes:</h3>
+        <p>{restaurant.most_popular_dishes}</p>
 
-        <button className="reserve-btn" onClick={() => navigate(`/book/${restaurant.id}`)}>
+        <button className="reserve-btn" onClick={handleReserveClick}>
           Make a Reservation
         </button>
       </div>

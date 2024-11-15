@@ -1,32 +1,83 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-//import Footer from './Footer';
-import '../styles/BookingPage.css'; // Create this file for styling
+import '../styles/BookingPage.css'; // Ensure you have this file for styling
 
 function BookingPage() {
-  const { id } = useParams();
+  const { id } = useParams(); // Restaurant ID from URL
   const navigate = useNavigate();
-  
+
   const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
-  
-  // Example cost calculation, adjust as needed
-  const costPerAdult = 20; // Cost per adult
-  const costPerChild = 10; // Cost per child
+  const [reservationDate, setReservationDate] = useState('');
+  const [userId, setUserId] = useState(null); // User ID will be dynamically set (e.g., from login)
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null); // To store error messages
 
-  const totalCost = (adults * costPerAdult) + (children * costPerChild);
+  // Simulate getting user info (you can replace this with your actual logic)
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('userId'); // Example: fetching from local storage
+    if (loggedInUser) {
+      setUserId(loggedInUser);
+    }
+  }, []);
 
-  const handleBooking = () => {
-    // Handle booking logic here
-    console.log(`Booking for ${adults} adults and ${children} children at hotel ID ${id}.`);
-    // For now, just navigate back to home or any other page
-    navigate('/');
+  const handleBooking = async () => {
+    // Validation for adults and children
+    if (adults <= 0 && children <= 0) {
+      alert('Please enter at least one adult or child.');
+      return;
+    }
+
+    // Date validation (cannot be in the past)
+    if (!reservationDate || new Date(reservationDate) < new Date()) {
+      alert('Please select a valid reservation date.');
+      return;
+    }
+
+    const bookingData = {
+      restaurant_id: id, // This is the restaurant ID from the URL
+      adults,
+      children,
+      reservation_date: reservationDate, // Just use reservation date
+      userId,
+    };
+
+    setLoading(true); // Set loading state to true while making request
+    setError(null); // Reset error state before making a request
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/reservation_details`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to book the table. Please try again.');
+      }
+
+      const responseJson = await response.json();
+
+      if (responseJson.reservationId) {
+        alert(`Booking confirmed! Your reservation ID is: ${responseJson.reservationId}`);
+        navigate('/'); // Redirect to homepage or confirmation page
+      } else {
+        throw new Error('Unexpected response. No booking ID returned.');
+      }
+    } catch (error) {
+      console.error('Error during booking:', error);
+      setError(error.message); // Store the error message in the state
+    } finally {
+      setLoading(false); // Reset loading state
+    }
   };
 
   return (
-    <div>
     <div className="booking-page">
       <h2>Book a Table</h2>
+      {error && <div className="error-message">{error}</div>} {/* Show error message if any */}
       <div className="booking-form">
         <label>
           Number of Adults:
@@ -46,13 +97,21 @@ function BookingPage() {
             min="0"
           />
         </label>
-        <p>Total Cost: ${totalCost}</p>
-        <button onClick={handleBooking}>Confirm Booking</button>
-        
+
+        <label>
+          Reservation Date:
+          <input
+            type="date"
+            value={reservationDate}
+            onChange={(e) => setReservationDate(e.target.value)}
+            required
+          />
+        </label>
+
+        <button onClick={handleBooking} disabled={loading}>
+          {loading ? 'Booking...' : 'Confirm Booking'}
+        </button>
       </div>
-      
-    </div>
-    
     </div>
   );
 }
